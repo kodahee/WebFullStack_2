@@ -17,16 +17,21 @@ public class MemberService {
 		String method = request.getMethod();
 		
 		actionForward.setPath("../WEB-INF/member/memberLogin.jsp");
+		actionForward.setCheck(true);
 		
 		if(method.toUpperCase().equals("POST")) {
 			MemberDTO memberDTO = new MemberDTO();
 			memberDTO.setId(request.getParameter("id"));
 			memberDTO.setPw(request.getParameter("pw"));
 			
-			memberDTO = memberDAO.login(memberDTO);
+			memberDTO = memberDAO.memberLogin(memberDTO);
 			
-			actionForward.setPath("../index.jsp");
+			if(memberDTO != null) {
+				actionForward.setPath("../index.jsp");
+				actionForward.setCheck(false);
+			}
 		}
+		
 		
 		return actionForward;
 	}

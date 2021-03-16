@@ -47,7 +47,7 @@ public class MemberDAO {
 		
 	}
 
-	public MemberDTO login(MemberDTO memberDTO) throws Exception {
+	public MemberDTO memberLogin(MemberDTO memberDTO) throws Exception {
 
 		// id, pw를 입력받고 조회
 
