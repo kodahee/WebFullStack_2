@@ -81,9 +81,15 @@ public class MemberController extends HttpServlet {
 			System.out.println("그 외 다른 처리");
 		}
 		
-		// forward
-		RequestDispatcher view = request.getRequestDispatcher(actionForward.getPath());
-		view.forward(request, response);
+		if(actionForward.isCheck()) {
+			// forward
+			RequestDispatcher view = request.getRequestDispatcher(actionForward.getPath());
+			view.forward(request, response);
+		} else {
+			// redirect
+			response.sendRedirect(actionForward.getPath());
+		}
+		
 		
 		
 		/*

@@ -37,6 +37,7 @@ public class MemberService {
 		String method = request.getMethod();
 		
 		actionForward.setPath("../WEB-INF/member/memberJoin.jsp");
+		actionForward.setCheck(true);
 		
 		if(method.toUpperCase().equals("POST")) {
 			MemberDTO memberDTO = new MemberDTO();
@@ -49,7 +50,8 @@ public class MemberService {
 			// DAO 메서드 호출
 			int result = memberDAO.memberJoin(memberDTO);
 			
-			actionForward.setPath("../index.jsp");
+			actionForward.setPath("../index.do");
+			actionForward.setCheck(false);
 		}
 		
 		return actionForward;
