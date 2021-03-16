@@ -44,33 +44,29 @@
 		</div>
 	</nav>
 
-	<div class="container">
-		<h3>Right Aligned Navbar</h3>
-		<p>The .navbar-right class is used to right-align navigation bar
-			buttons.</p>
-	</div>
+	<h1>Member Login Page</h1>
 
-
-	<!-- 	<h1>Index Page</h1>
-	<a href="./member/memberLogin.do">Member Login</a>
-	
-	id pw를 프론트에서 입력받아서 백엔드로
-	<form action="./member/memberLogin.do" method="get">
-		<input type="text" name="id">
-		<input type="password" name="pw">
-		<button>Login</button>
+	<form class="form-horizontal" action="./memberLogin.do" method="post">
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="id">ID:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="id"
+					placeholder="Enter id" name="id">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="pw">Password:</label>
+			<div class="col-sm-10">
+				<input type="password" class="form-control" id="pw"
+					placeholder="Enter password" name="pw">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</div>
 	</form>
-	
-	<form action="./member/memberJoin.do" method="get">
-		<input type="text" name="id">
-		<input type="password" name="pw">
-		<input type="text" name="name">
-		<input type="text" name="phone">
-		<input type="text" name="email">
-		<button>Join</button>
-	</form>
-	
-	<h3><a href="./sub/test.jsp?name=iu&age=20">GO Test</a></h3> -->
 
 </body>
 </html>
