@@ -13,6 +13,20 @@ public class BankBookService {
 	public void setBankbookDAO(BankBookDAO bankbookDAO) {
 		this.bankbookDAO = bankbookDAO;
 	}
+	
+	public ActionForward getSelect(HttpServletRequest request) throws Exception {
+		ActionForward actionForward = new ActionForward();
+		
+		long bookNumber = Long.parseLong(request.getParameter("bookNumber"));
+		
+		BankBookDTO bankbookDTO = bankbookDAO.getSelect(bookNumber);
+
+		actionForward.setPath("../WEB-INF/bankbook/bankbookSelect.jsp");
+		actionForward.setCheck(true);
+		request.setAttribute("bankbookDTO", bankbookDTO);
+		
+		return actionForward;
+	}
 
 	// getList
 	// DAO의 getList 호출 후 리턴

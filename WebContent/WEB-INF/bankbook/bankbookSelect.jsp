@@ -1,12 +1,11 @@
 <%@page import="com.lalalala.s1.bankbook.BankBookDTO"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
 <%
-	List<BankBookDTO> ar = (List<BankBookDTO>)request.getAttribute("list");
-
+	BankBookDTO bankbookDTO = (BankBookDTO)request.getAttribute("bankbookDTO");
 %>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +50,7 @@
 		</div>
 	</nav>
 
-	<h1>BankBook Page</h1>
+	<h1>BankBook Select Page</h1>
 
 	<div class="container">
 		<div class="row">
@@ -60,6 +59,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
+						<th>Number</th>
 						<th>Name</th>
 						<th>Rate</th>
 						<th>Sale</th>
@@ -67,13 +67,12 @@
 				</thead>
 				
 				<tbody>
-				<% for(int i=0; i<ar.size(); i++) { %>
 					<tr>
-						<td><a href="./bankbookSelect.do?bookNumber=<%= ar.get(i).getBookNumber() %>"><%= ar.get(i).getBookName() %></a></td>
-						<td><%= ar.get(i).getBookRate() %></td>
-						<td><%= ar.get(i).getBookSale() %></td>
+						<td><%= bankbookDTO.getBookNumber() %></td>
+						<td><%= bankbookDTO.getBookName() %></td>
+						<td><%= bankbookDTO.getBookRate() %></td>
+						<td><%= bankbookDTO.getBookSale() %></td>
 					</tr>
-				<%} %>
 				</tbody>
 			
 			</table>

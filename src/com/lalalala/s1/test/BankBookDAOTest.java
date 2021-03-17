@@ -11,8 +11,11 @@ public class BankBookDAOTest {
 
 		BankBookDAO bankbookDAO = new BankBookDAO();
 		try {
-			List<BankBookDTO> ar = bankbookDAO.getList();
-			System.out.println(ar.size() != 0);
+			
+			//BankBookDTO bankbookDTO = bankbookDAO.getSelect(1);
+			
+//			List<BankBookDTO> ar = bankbookDAO.getList();
+//			System.out.println(ar.size() != 0);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

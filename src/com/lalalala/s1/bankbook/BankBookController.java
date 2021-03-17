@@ -52,9 +52,11 @@ public class BankBookController extends HttpServlet {
 		try {
 			if(uri.equals("bankbookList.do")) {
 				actionForward = bankbookService.getList(request);
+			} else if(uri.equals("bankbookSelect.do")) {
+				actionForward = bankbookService.getSelect(request);
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 		// forward, redirect
